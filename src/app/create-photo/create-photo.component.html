@@ -1,0 +1,81 @@
+<!--<p>create-photo works!</p>-->
+
+<!--<h2 class="text-center">Create Photo</h2>-->
+<div class="col-md-6 offset-md-3">
+
+  <h2 class="centerify">Add new Photo</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label> Name</label>
+      <input type="text" class="form-control" id="name"
+             [(ngModel)]="photo.name" name="name">
+    </div>
+    <div class="form-group">
+      <label> Path</label>
+      <input type="text" class="form-control" id="path"
+             [(ngModel)]="photo.path" name="path">
+    </div>
+    <div class="form-group">
+      <label> Description</label>
+      <input type="text" class="form-control" id="description"
+             [(ngModel)]="photo.description" name="description">
+    </div>
+    <div class="form-group">
+      <label> User Id</label>
+      <input type="number" class="form-control" id="userid"
+             [(ngModel)]="photo.userid" name="userid">
+    </div>
+    <!--sss-->
+    <div class="form-group">
+      <label> Photo</label>
+      <input type="file" class="form-control" id="imagedata"
+             [(ngModel)]="photo.imagedata" name="imagedata">
+    </div>
+    
+    <div class="container row">
+      <div class="col-md-12">
+        <h1>upload image</h1>
+      </div>
+    </div>
+    
+    <div class="container row">
+      <div class="col-md-6">
+        <input type="file" (change)="onFileChanged($event)">
+
+      </div>
+      <div class="col-md-6">
+        <input class=" btn btn-success" type="button" (click)="onUpload()" value="upload">
+      </div>
+    </div>
+    
+    <div class="container row">
+      <div class="col-md-12">
+        <div *ngIf=message>{{message}}</div>
+      </div>
+    </div>
+
+    <div class="container row">
+      <!--<div class="col-md-6">
+      <input type="text" class="form-control" id="name"
+             [(ngmodel)]="photo.name" name="name" />
+    </div>-->
+      <div class="col-md-6">
+        <input class=" btn btn-success" type="button" (click)="getImage()" value="Get Image">
+
+      </div>
+    </div>
+    <div class="container row">
+      <div class="col-md-12">
+        <div *ngIf=retrievedImage>
+          <img [src]="retrievedImage">
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="text-center">
+      <button class=" btn btn-success" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

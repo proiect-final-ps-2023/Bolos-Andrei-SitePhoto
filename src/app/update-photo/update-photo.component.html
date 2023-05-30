@@ -1,0 +1,54 @@
+<!--<p>update-photo works!</p>-->
+
+<h2 class="text-center">Update Photo</h2>
+<div class="col-md-6 offset-md-3">
+
+  <!--<form (ngSubmit)="onSubmit()">
+
+    <div class="text-center">
+      <button class=" btn btn-success" type="submit">Submit</button>
+    </div>
+  </form>-->
+
+  <form (ngSubmit)="updatePhotoName()">
+    <div class="form-group">
+      <label> Name</label>
+      <input type="text" class="form-control" id="name"
+             [(ngModel)]="photo.name" name="name">
+    </div>
+    <div class="text-center">
+      <button class=" btn btn-success" type="submit">Update Name</button>
+    </div>
+  </form>
+
+  <form (ngSubmit)="updatePhotoDescription()">
+    <div class="form-group">
+      <label> Description</label>
+      <input type="text" class="form-control" id="description"
+             [(ngModel)]="photo.description" name="description">
+    </div>
+    <div class="text-center">
+      <button class=" btn btn-success" type="submit">Update Description</button>
+    </div>
+  </form>
+  <form (ngSubmit)="updatePhotoPath()">
+    <div class="form-group">
+      <label> Path</label>
+      <input type="text" class="form-control" id="path"
+             [(ngModel)]="photo.path" name="path">
+    </div>
+    <div class="text-center">
+      <button class=" btn btn-success" type="submit">Update Path</button>
+    </div>
+  </form>
+  <form (ngSubmit)="updatePhotoUser()">
+    <div class="form-group">
+      <label> User Id</label>
+      <input type="number" class="form-control" id="userid"
+             [(ngModel)]="photo.userid" name="userid">
+    </div>
+    <div class="text-center">
+      <button class=" btn btn-success" type="submit">Update User</button>
+    </div>
+  </form>
+</div>

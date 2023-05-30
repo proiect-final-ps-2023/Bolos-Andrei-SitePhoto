@@ -1,0 +1,27 @@
+<!--<p>admin-page works!</p>-->
+<h2 class="centerify">User List</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Admin?</th>
+      <th>IsLoggedIn?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.password}}</td>
+      <td>{{user.admin}}</td>
+      <td>{{user.isloggedin}}</td>
+      <td>
+        <button (click)="updateAdmin(user.id,user)" class="btn btn-info">Update ?Admin</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

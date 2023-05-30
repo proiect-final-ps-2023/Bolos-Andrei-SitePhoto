@@ -1,0 +1,40 @@
+<!--<p>photo-list works!</p>-->
+<div id="content" #content>
+
+  <h2 class="centerify">
+    Photo List
+  </h2>
+  <div class="centerify">
+    <button (click)="generatePDF()" class="btn btn-success btn-lg" style="margin-right: 10px">Generate PDF</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Path</th>
+        <th>Description</th>
+        <th>User ID</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let photo of photoList">
+        <!--<td>
+          <button (click)="photoDetails(photo.id)" class="btn btn-info">Details</button>
+        </td>-->
+        <td>{{photo.id}}</td>
+        <td>{{photo.name}}</td>
+        <td>{{photo.path}}</td>
+        <td>{{photo.description}}</td>
+        <td>{{photo.userid}}</td>
+        <td>
+          <button (click)="photoDetails(photo.id)" class="btn btn-success btn-lg" style="margin-right: 10px">Display</button>
+          <button (click)="updatePhoto(photo.id)" class="btn btn-info">Update</button>
+          <button (click)="deletePhoto(photo.id)" class="btn btn-danger btn-sm" style="margin-left: 10px">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
